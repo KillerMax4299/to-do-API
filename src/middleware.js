@@ -10,7 +10,7 @@ async function getall() {
 async function register({ username, password }) {
   const client = await pool.connect();
   await client.query({
-    text: "INSERT INTO todolist2(username,password) VALUES ( $1 , $2 );",
+    text: "INSERT INTO todolist2(username,pass) VALUES ( $1 , $2 );",
     values: [username, password],
   });
   client.end();
@@ -32,7 +32,7 @@ const login = async ({ username, password }) => {
   const client = await pool.connect();
 
   const { rows, rowCount } = await client.query({
-    text: "SELECT user_id, pending_list, completed_list FROM todolist2 WHERE username = $1 AND password = $2",
+    text: "SELECT user_id, pending_list, completed_list FROM todolist2 WHERE username = $1 AND pass = $2",
     values: [username, password],
   });
   client.end();
