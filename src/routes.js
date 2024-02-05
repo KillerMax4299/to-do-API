@@ -47,12 +47,14 @@ router.patch("/json",middleware, async (req, res) => {
   else res.sendStatus(403)
 });
 
-router.get("/test", middleware, async (req, res) => {
+router.get("/test",middleware, async (req, res) => {
+
   res.json(req.decoded);
 });
 
 function middleware(req, res, next) {
-  req.decoded = verifyToken(req.headers.authorization.substring(7));
+  let data = req.headers.authorization.split(" ");
+  req.decoded = verifyToken(data[data.length - 1]);
   next();
 }
 
