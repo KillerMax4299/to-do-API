@@ -65,32 +65,32 @@ valid `authorization` token is required from `/login` response.
 The route for CRUD operations is `/json`
   - ### Read Todo (GET)
 
-    ```json
+    ```
     Only valid token will return the list           //as array of objects
     ```
 
   - ### Add Todo (POST)
     
-    ```json
+    ```js
     {
-      "id": integer
+      "id": integer,
       "name": string
     }
     ```
   - ### Delete Todo (DELETE)
     
-    ```json
+    ```js
     {
-      "id": integer
+      "id": integer,
       "name": string
     }
     ```
   - ### Update Todo (PATCH)
     
-    ```json
+    ```js
     {
-      "index": integer                // index of the element to update
-      "id": integer   
-      "name": string                  // new name of the element
+      "index": integer,                // index of the element to update
+      "id": integer,
+      "name": string                   // new name of the element
     }
     ```
