@@ -62,7 +62,7 @@
 ## `CRUD` options 
 valid `authorization` token is required from `/login` response.
 
-The route for CRUD operations is `/json`
+The route for CRUD operations is [`/json`](https://the-to-do-api.vercel.app/json)
   - ### Read Todo (GET)
 
     ```
