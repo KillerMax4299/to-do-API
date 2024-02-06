@@ -5,7 +5,7 @@ const { getTodo, addTodo, removeTodo, updateTodo } = require("./crud");
 const { verifyToken } = require("./auth");
 
 router.get("/", function (req, res) {
-  res.sendStatus(200).json({ message: "APi Connected" });
+  res.json("APi Connected");
 });
 
 router.get("/getall", async function (req, res) {
@@ -19,7 +19,7 @@ router.get("/username/:input", async (req, res) => {
 
 router.post("/register", async function (req, res) {
   const result = await register(req.body);
-  if (result) res.sendStatus(200).json({ message: "Successfully registered" });
+  if (result) res.json({ message: "Successfully registered" });
 });
 
 router.post("/login", async (req, res) => {
