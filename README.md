@@ -7,10 +7,7 @@
   **Response**
 
   ```json
-  {
-    "status": 200,
-    "message": "APi Connected"
-  }
+  "APi Connected"
   ```
 
 - [`/username/:input`](https://the-to-do-api.vercel.app/username/)
@@ -36,14 +33,7 @@
   }
   ```
 
-  **Response**
-
-  ```json
-  {
-    "status": 200,
-    "message": "Successfully registered"
-  }
-  ```
+  
 
 - [`/login`](https://the-to-do-api.vercel.app/login)
 
@@ -61,12 +51,46 @@
   if **Credentials** are correct
 
   ```json
-  {
-    "user_id": "cead13f7-5225-47e3-9c06-0ea6583fc3e6",
-    "pending_list": null,
-    "completed_list": null
-  }
+  "Bearer <JWT token>"
   ```
+
+  each token created will be valid for **30 days**.
 
   Else
   `false`
+
+## `CRUD` options 
+valid `authorization` token is required from `/login` response.
+
+The route for CRUD operations is `/json`
+  - ### Read Todo (GET)
+
+    ```json
+    Only valid token will return the list           //as array of objects
+    ```
+
+  - ### Add Todo (POST)
+    
+    ```json
+    {
+      "id": integer
+      "name": string
+    }
+    ```
+  - ### Delete Todo (DELETE)
+    
+    ```json
+    {
+      "id": integer
+      "name": string
+    }
+    ```
+  - ### Update Todo (PATCH)
+    
+    ```json
+    {
+      "index": integer                // index of the element to update
+      "id": integer   
+      "name": string                  // new name of the element
+    }
+    ```
