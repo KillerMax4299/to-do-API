@@ -63,6 +63,14 @@
 valid `authorization` token is required from `/login` response.
 
 The route for CRUD operations is [`/json`](https://the-to-do-api.vercel.app/json)
+
+  **Note:** 
+
+  ```
+  /json?res=true
+  ```
+  **returns** the data on every ***Mutations***
+
   - ### Read Todo (GET)
 
     ```
