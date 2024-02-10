@@ -10,9 +10,9 @@ const pool = new Pool({
   password: PGPASSWORD,
   port: 5432,
   database: PGDATABASE,
-  // ssl: {
-  //   rejectUnauthorized: true, // Enable SSL and reject unauthorized certificates
-  // },
+  ssl: {
+    rejectUnauthorized: true, // Enable SSL and reject unauthorized certificates
+  },
 });
 
 module.exports = {
